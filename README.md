@@ -1,26 +1,26 @@
-AUTOCLICKER
-AutoClicker is a Python application designed to automate mouse clicks and keyboard presses at specified intervals. It is particularly useful for tasks that require repetitive actions, such as gaming or software testing.
+#AUTOCLICKER
+AutoClicker is a Python application designed to automate mouse clicks and keyboard presses at specified intervals using PyautoGUI. Its main purpose it's to avoid inactivity ban from games or apps, and also excecuting simple tasks that require only one action to be performed in a determined time interval.
 
-USAGE
+#INSTALLATION / DOWNLOAD
+##To review/modify the code or execute the script via IDE
 Download the Repository: Clone or download the repository to your local machine.
 Install Dependencies: Ensure you have Python installed on your system. Install the required dependencies using pip:
 bash
 Copy code
 pip install -r requirements.txt
-Run the Application: Execute the Python script Autoclicker.py to start the AutoClicker application.
+Open terminal and excecute command: Python Autoclicker.pyw
+To buid a .exe file just execute the command: 
+pyinstaller --onefile --windowed --icon=icon.ico --add-data="icon.ico;." Autoclicker.py
+Make sure your icon.ico file its inside the same folder as the main script, if you are still having truble loading the icon, make sure to add the file path to the command: 
+pyinstaller --onefile --windowed --icon=icon.ico --add-data="YourIconFilePath";." Autoclicker.py
+After following this process you will create a dist folder with an Autoclicker.exe file isnide it, just open it to execute the software. 
+
+##To execute the file as it is to use it right away
+Download the Autoclicker.exe file from [here](https://github.com/nacholmedina/AutoClicker/blob/main/dist/) (Might be detected as a suspicious download given its nature and main purpose) and open it, the soft will start inmediately. 
+
+##Usage
 Set Interval and Action: Enter the desired interval (in seconds) between each action and select the action to perform from the dropdown menu.
 Start/Stop: Click the "Start" button to begin the automated actions. Click "Stop" to pause the automation.
-BUILD
-To build the AutoClicker application into an executable file, follow these steps:
+![image](https://github.com/nacholmedina/AutoClicker/assets/54557023/3af381ff-ef0b-4b71-8538-2a7e84606f7d)
 
-Install PyInstaller: If you haven't already, install PyInstaller using pip:
-bash
-Copy code
-pip install pyinstaller
-Navigate to the Project Directory: Open a terminal or command prompt and navigate to the directory containing the Autoclicker.py script.
-Run PyInstaller Command: Use PyInstaller to build the executable file:
-bash
-Copy code
-pyinstaller --onefile --windowed --icon=icon.ico --add-data="icon.ico;." Autoclicker.py
-Find the Executable: After PyInstaller completes, navigate to the dist directory within your project folder. You will find the built executable file (Autoclicker.exe on Windows) there.
-Run the Executable: Double-click the executable file to run the AutoClicker application without needing Python or any dependencies installed.
+###If you have any doubts about this software, or want to contact me for any other reason feel free to reach out to me via [Linkedin](https://www.linkedin.com/in/nacholmedina/).
