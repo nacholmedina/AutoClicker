@@ -7,7 +7,7 @@ import webbrowser
 class MyFrame(wx.Frame):
     def __init__(self):
         super().__init__(None, title="AutoClicker", size=(300, 250))
-        self.icon = wx.Icon("icon.ico", wx.BITMAP_TYPE_ICO)  # Load icon from file
+        self.icon = wx.Icon("icon.ico", wx.BITMAP_TYPE_ICO)
         self.SetIcon(self.icon)
         panel = wx.Panel(self)
         panel.SetBackgroundColour(wx.Colour(240, 240, 240))
@@ -18,14 +18,14 @@ class MyFrame(wx.Frame):
         self.action_choices = ["Shift", "Space", "Enter", "Right Click", "Left Click"]
         self.action_combo = wx.ComboBox(panel, choices=self.action_choices, style=wx.CB_READONLY)
 
-        self.selected_action = self.action_choices[self.action_combo.GetSelection()]  # Default action
+        self.selected_action = self.action_choices[self.action_combo.GetSelection()]
 
         self.action_combo.Bind(wx.EVT_COMBOBOX, self.on_action_select)
 
         self.start_stop_button = wx.Button(panel, label="Start")
-        self.start_stop_button.SetBackgroundColour(wx.Colour(0, 128, 0))  # Set button color
-        self.start_stop_button.SetForegroundColour(wx.WHITE)  # Set text color
-        self.start_stop_button.SetFont(wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))  # Set font
+        self.start_stop_button.SetBackgroundColour(wx.Colour(0, 128, 0))
+        self.start_stop_button.SetForegroundColour(wx.WHITE)
+        self.start_stop_button.SetFont(wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD))
 
         self.countdown_text = wx.StaticText(panel, label="      No actions to be performed")
         countdown_box = wx.BoxSizer(wx.HORIZONTAL)
@@ -42,7 +42,6 @@ class MyFrame(wx.Frame):
         vbox.Add(self.action_combo, flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.BOTTOM, border=10)
         vbox.Add(self.start_stop_button, flag=wx.EXPAND|wx.LEFT|wx.RIGHT|wx.BOTTOM, border=-5)
 
-        # Add bottom message and LinkedIn icon
         hbox_bottom = wx.BoxSizer(wx.HORIZONTAL)
         hbox_bottom.AddStretchSpacer()
         created_by_text = wx.StaticText(panel, label="Created with ♥ by @nacholmedina", style=wx.ALIGN_CENTER_VERTICAL)
@@ -76,7 +75,7 @@ class MyFrame(wx.Frame):
                 return
             self.start_stop_button.SetBackgroundColour(wx.RED)
             self.interval = interval
-            self.selected_action = self.action_choices[self.action_combo.GetSelection()]  # Assign action based on current selection
+            self.selected_action = self.action_choices[self.action_combo.GetSelection()] 
             self.keep_running.set()
             self.autoclick_thread = threading.Thread(target=self.auto_click)
             self.autoclick_thread.start()
